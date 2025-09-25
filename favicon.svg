@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <!-- Gradient principal Axonity -->
+    <linearGradient id="axonityGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563EB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F59E0B;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient pour l'effet de profondeur -->
+    <linearGradient id="depthGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E40AF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Ombre portée -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#1E293B" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Fond avec bordure arrondie -->
+  <rect x="8" y="8" width="84" height="84" rx="20" ry="20" fill="url(#axonityGradient)" filter="url(#shadow)"/>
+  
+  <!-- Lettre A stylisée d'Axonity -->
+  <g transform="translate(50,50)">
+    <!-- Base du A -->
+    <path d="M -18 25 L -8 -20 L 0 -25 L 8 -20 L 18 25 L 8 25 L 6 15 L -6 15 L -8 25 Z" 
+          fill="white" 
+          stroke="none"/>
+    
+    <!-- Barre transversale du A avec style tech -->
+    <rect x="-10" y="5" width="20" height="4" rx="2" fill="url(#depthGradient)"/>
+    
+    <!-- Point décoratif moderne -->
+    <circle cx="0" cy="-20" r="3" fill="white" opacity="0.9"/>
+    
+    <!-- Éléments décoratifs tech -->
+    <rect x="-2" y="-30" width="4" height="6" rx="2" fill="white" opacity="0.7"/>
+    <rect x="-15" y="20" width="6" height="2" rx="1" fill="white" opacity="0.6"/>
+    <rect x="9" y="20" width="6" height="2" rx="1" fill="white" opacity="0.6"/>
+  </g>
+  
+  <!-- Brillance subtile -->
+  <ellipse cx="30" cy="25" rx="15" ry="8" fill="white" opacity="0.1" transform="rotate(-30 30 25)"/>
+</svg>

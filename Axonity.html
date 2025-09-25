@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Axonity - Agence de création de sites web professionnels. Sites vitrines, portfolios, e-commerce léger et maintenance web.">
+    <meta name="keywords" content="création site web, développement web, site vitrine, portfolio, e-commerce">
+    <meta name="author" content="Axonity">
+    <title>Axonity - Votre vision, notre code</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.svg">
+    <meta name="theme-color" content="#2563EB">
+    
+    <link rel="stylesheet" href="Axonity.CSS">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Indicateur de progression du scroll -->
+    <div id="scrollProgress"></div>
+
+    <div id="loader" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:#fff;display:flex;align-items:center;justify-content:center;z-index:2000;">
+        <div class="loader-circle"></div>
+    </div>
+
+    <!-- Barre de menu élaborée -->
+    <header class="header" role="banner">
+        <!-- Logo avec image -->
+        <a href="#accueil" class="logo" aria-label="Accueil Axonity">
+            <img src="Logo.png" alt="Logo Axonity" class="logo-image" loading="lazy">
+            <span class="logo-text">Axonity</span>
+        </a>
+        <!-- Menu principal -->
+        <nav class="navbar" role="navigation" aria-label="Menu principal">
+            <ul>
+                <li class="dropdown">
+                    <a href="#services">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#site-vitrine">Site Vitrine</a></li>
+                        <li><a href="#portfolio-pro">Portfolio Pro</a></li>
+                        <li><a href="#ecommerce-leger">E-commerce Léger</a></li>
+                        <li><a href="#maintenance-hebergement">Maintenance & Hébergement</a></li>
+                    </ul>
+                </li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#tarifs">Tarifs</a></li> <!-- Lien interne vers la section Tarifs -->
+            </ul>
+        </nav>
+        <a href="#contact" class="btn-contact" role="button">Nous contacter</a>
+    </header>
+
+    <main role="main">
+        <!-- Section Accueil -->
+        <section id="accueil" class="accueil-fullscreen" style="background-color: #F8F8F8;">
+            <!-- Éléments décoratifs flottants Axonity -->
+            <div class="floating-elements">
+                <div class="floating-shape shape-1"></div>
+                <div class="floating-shape shape-2"></div>
+                <div class="floating-shape shape-3"></div>
+                <div class="floating-code">{ code: "excellence" }</div>
+            </div>
+            
+            <div class="accueil-container">
+                <!-- Colonne gauche : Texte -->
+                <div class="accueil-texte">
+                    <div class="hero-badge">
+                        <span>� Axonity - L'excellence digitale</span>
+                    </div>
+                    <h1>Nous créons des <span class="highlight">expériences web</span> qui marquent les esprits</h1>
+                    <h2>Votre partenaire digital pour une présence en ligne authentique et percutante</h2>
+                    <p>
+                        Chez Axonity, chaque projet est une histoire unique. Nous combinons créativité, innovation technique et expertise métier pour donner vie à vos ambitions digitales.
+                        <br><strong>Approche personnalisée • Technologies modernes • Accompagnement complet</strong>
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary pulse-effect">
+                            <i class="fas fa-magic"></i> Créons ensemble votre projet
+                        </a>
+                        <a href="#portfolio" class="btn btn-secondary">
+                            <i class="fas fa-palette"></i> Découvrir notre créativité
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <strong>100%</strong>
+                            <span>Humain avant tout</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>5★</strong>
+                            <span>Codage personnalisé</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>24/7</strong>
+                            <span>À votre écoute</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Citation personnalisée Axonity -->
+                    <div class="hero-quote">
+                        <blockquote>
+                            "Chez Axonity, nous ne créons pas simplement des sites web, nous sculptons des expériences digitales qui reflètent l'âme de votre entreprise."
+                        </blockquote>
+                        <cite>— L'équipe Axonity</cite>
+                        
+                        <!-- Message secret au hover -->
+                        <div class="secret-message">
+                            <span>🤫 Psst... Nous aimons les détails qui font la différence !</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonne droite : Visuel -->
+                <div class="accueil-visuel">
+                    <div class="hero-visuals">
+                        <!-- Ordinateur -->
+                        <div class="device laptop">
+                            <div class="screen">
+                                <img src="Exemple1.png" alt="Site web sur un iMac">
+                            </div>
+                            <div class="stand"></div>
+                        </div>
+                        <!-- Tablette -->
+                        <div class="device tablet">
+                            <div class="screen">
+                                <img src="Exemple1.png" alt="Site web sur tablette">
+                            </div>
+                        </div>
+                        <!-- Smartphone -->
+                        <div class="device smartphone">
+                            <div class="screen">
+                                <img src="Exemple1.png" alt="Site web sur smartphone">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Trust & Crédibilité -->
+        <section class="trust-section fade-in">
+            <div class="container">
+                <div class="trust-content">
+                    <div class="trust-badges">
+                        <div class="badge-item">
+                            <div class="badge-icon">⚡</div>
+                            <h4>Livraison rapide</h4>
+                            <p>7-14 jours en moyenne</p>
+                        </div>
+                        <div class="badge-item">
+                            <div class="badge-icon">🛡️</div>
+                            <h4>Garantie qualité</h4>
+                            <p>Retouches incluses</p>
+                        </div>
+                        <div class="badge-item">
+                            <div class="badge-icon">📱</div>
+                            <h4>100% Responsive</h4>
+                            <p>Parfait sur tous écrans</p>
+                        </div>
+                    </div>
+                    <div class="trust-guarantee">
+                        <h3>🎯 Notre engagement qualité</h3>
+                        <ul>
+                            <li>✅ Satisfaction garantie ou remboursé</li>
+                            <li>✅ Support technique 6 mois offert</li>
+                            <li>✅ Formation à l'utilisation incluse</li>
+                            <li>✅ Code propre et optimisé SEO</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="avantages" class="advantages fade-in">
+            <div class="container">
+                <h1>Pourquoi nous choisir ?</h1>
+                <div class="advantage-cards">
+                    <!-- Carte 1 : 100% Personnalisé -->
+                    <div class="card">
+                        <span class="icon" style="color: #E53935;"><i class="fa-solid fa-star"></i></span>
+                        <h4>100% Personnalisé</h4>
+                        <p>Chaque site est conçu sur mesure pour refléter l'identité unique de votre marque, sans templates.</p>
+                    </div>
+                    <!-- Carte 2 : Prix Abordables -->
+                    <div class="card">
+                        <span class="icon" style="color: #E53935;"><i class="fa-solid fa-money-bill"></i></span>
+                        <h4>Prix Abordables</h4>
+                        <p>Des solutions de haute qualité adaptées à votre budget, pour un retour sur investissement optimal.</p>
+                    </div>
+                    <!-- Carte 3 : Qualité & Rapidité -->
+                    <div class="card">
+                        <span class="icon" style="color: #E53935;"><i class="fa-solid fa-bolt"></i></span>
+                        <h4>Qualité & Rapidité</h4>
+                        <p>Des sites optimisés pour la performance, livrés dans les délais, sans compromis sur la qualité.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services fade-in">
+            <div class="container">
+                <h2>Nos Services</h2>
+                <div class="service-list">
+                    <div class="service-item">
+                        <img src="site-vitrine.png" alt="Icône Site Vitrine" loading="lazy" width="80" height="80">
+                        <h4>Site Vitrine</h4>
+                        <p>Une présence en ligne professionnelle pour présenter votre entreprise et vos activités.</p>
+                    </div>
+                    <div class="service-item">
+                        <img src="Mon-Portfolio.png" alt="Icône Portfolio Professionnel">
+                        <h4>Portfolio Pro</h4>
+                        <p>Mettez en valeur vos œuvres, projets et compétences avec un portfolio élégant et fonctionnel.</p>
+                    </div>
+                    <div class="service-item">
+                        <img src="Boutique-ecommerce.png" alt="Icône E-commerce léger">
+                        <h4>E-commerce Léger</h4>
+                        <p>Démarrez la vente en ligne de vos produits avec une boutique simple et intuitive.</p>
+                    </div>
+                    <div class="service-item">
+                        <img src="Maintenance-herbergement.png" alt="Icône Maintenance et Hébergement">
+                        <h4>Maintenance & Hébergement</h4>
+                        <p>Nous nous occupons de l'hébergement, des mises à jour et de la sécurité de votre site.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio fade-in">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Nos Réalisations</h2>
+                    <p class="section-subtitle">Découvrez quelques projets qui illustrent notre savoir-faire</p>
+                </div>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="Exemple1.png" alt="Site web pour protésiste ongulaire" loading="lazy" width="400" height="300">
+                        </div>
+                        <div class="project-details">
+                            <div class="project-tag">Site Vitrine</div>
+                            <h4>Protésiste Ongulaire Premium</h4>
+                            <p>Site vitrine moderne avec galerie interactive, système de réservation en ligne et optimisation SEO locale.</p>
+                            <div class="project-techs">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>SEO</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="Exemple2.png" alt="Portfolio photographe professionnel" loading="lazy" width="400" height="300">
+                        </div>
+                        <div class="project-details">
+                            <div class="project-tag">Portfolio</div>
+                            <h4>Portfolio Photographe Artistique</h4>
+                            <p>Portfolio élégant avec galerie dynamique, filtres par catégorie et interface utilisateur intuitive.</p>
+                            <div class="project-techs">
+                                <span>Design UX/UI</span>
+                                <span>Responsive</span>
+                                <span>Galerie</span>
+                                <span>Animations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-cta">
+                    <p>Votre projet mérite le même niveau d'excellence</p>
+                    <a href="#contact" class="btn btn-primary">Discutons de votre projet</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact fade-in">
+            <div class="container">
+                <h1>Prêt à concrétiser votre projet ?</h1>
+                <p>Contactez-nous pour une discussion personnalisée et un devis gratuit.</p>
+                <form class="contact-form" action="#" method="post" aria-label="Formulaire de contact">
+                    <label for="name" class="sr-only">Votre nom</label>
+                    <input type="text" id="name" name="name" placeholder="Votre Nom" required aria-required="true">
+                    
+                    <label for="email" class="sr-only">Votre email</label>
+                    <input type="email" id="email" name="email" placeholder="Votre Email" required aria-required="true">
+                    
+                    <label for="message" class="sr-only">Votre message</label>
+                    <textarea id="message" name="message" placeholder="Décrivez votre projet..." rows="5" required aria-required="true"></textarea>
+                    
+                    <button type="submit" class="btn btn-submit">Envoyer ma demande</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="faq" class="faq fade-in">
+            <div class="container">
+                <h2>FAQ</h2>
+                <div class="faq-item">
+                    <h4 class="faq-question">
+                        Comment demander un devis ?
+                        <span class="faq-icon">+</span>
+                    </h4>
+                    <p class="faq-answer">Remplissez le formulaire de contact et nous vous répondrons sous 24h.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">
+                        Quels services proposez-vous ?
+                        <span class="faq-icon">+</span>
+                    </h4>
+                    <p class="faq-answer">Nous proposons des services de création de sites web, SEO, et design graphique.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Processus de travail -->
+        <section class="process-section fade-in">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Notre méthode de travail</h2>
+                    <p class="section-subtitle">Un processus éprouvé pour garantir votre succès</p>
+                </div>
+                <div class="process-steps">
+                    <div class="step-item animate-on-scroll stagger-1">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">🎯</div>
+                        <h4>Analyse & Stratégie</h4>
+                        <p>Nous analysons vos besoins, votre marché et définissons ensemble la stratégie digitale optimale.</p>
+                        <div class="step-duration">1-2 jours</div>
+                    </div>
+                    <div class="step-item animate-on-scroll stagger-2">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">🎨</div>
+                        <h4>Design & Maquettes</h4>
+                        <p>Création des maquettes et du design sur-mesure, validation avec vous à chaque étape.</p>
+                        <div class="step-duration">2-3 jours</div>
+                    </div>
+                    <div class="step-item animate-on-scroll stagger-3">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">⚡</div>
+                        <h4>Développement</h4>
+                        <p>Codage professionnel, optimisations SEO et tests sur tous les appareils.</p>
+                        <div class="step-duration">3-7 jours</div>
+                    </div>
+                    <div class="step-item animate-on-scroll stagger-4">
+                        <div class="step-number">4</div>
+                        <div class="step-icon">🚀</div>
+                        <h4>Livraison & Support</h4>
+                        <p>Mise en ligne, formation et support technique pendant 6 mois.</p>
+                        <div class="step-duration">1 jour</div>
+                    </div>
+                </div>
+                <div class="process-guarantee">
+                    <div class="guarantee-content">
+                        <h3>🛡️ Notre engagement qualité</h3>
+                        <div class="guarantee-items">
+                            <div class="guarantee-item">
+                                <strong>Révisions illimitées</strong>
+                                <span>jusqu'à satisfaction complète</span>
+                            </div>
+                            <div class="guarantee-item">
+                                <strong>Livraison garantie</strong>
+                                <span>dans les délais convenus</span>
+                            </div>
+                            <div class="guarantee-item">
+                                <strong>Support 6 mois</strong>
+                                <span>assistance technique incluse</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tarifs">
+            <h1>Mes Offres & Tarifs</h1>
+            <div class="packs-container">
+                <!-- Pack Starter -->
+                <div class="pricing-card pack-starter">
+                    <div class="icon">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3>Pack Starter</h3>
+                    <p class="price">350 €</p>
+                    <p class="description">Idéal pour les petites entreprises, artisans ou indépendants.</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Site vitrine (1 à 3 pages)</li>
+                        <li><i class="fa-solid fa-check"></i> Design moderne & responsive</li>
+                        <li><i class="fa-solid fa-check"></i> Formulaire de contact</li>
+                        <li><i class="fa-solid fa-check"></i> Mise en ligne rapide (7 jours)</li>
+                    </ul>
+                </div>
+
+                <!-- Pack Pro -->
+                <div class="pricing-card pack-pro">
+                    <span class="popular-badge">Le plus populaire !</span>
+                    <div class="icon">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <h3>Pack Pro</h3>
+                    <p class="price">600 €</p>
+                    <p class="description">Conçu pour développer votre visibilité et mettre en avant vos services.</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Site vitrine (4 à 6 pages)</li>
+                        <li><i class="fa-solid fa-check"></i> Optimisation SEO basique</li>
+                        <li><i class="fa-solid fa-check"></i> Intégration réseaux sociaux</li>
+                        <li><i class="fa-solid fa-check"></i> Formation rapide</li>
+                        <li><i class="fa-solid fa-check"></i> Livraison sous 10 à 14 jours</li>
+                    </ul>
+                </div>
+
+                <!-- Pack E-commerce -->
+                <div class="pricing-card pack-ecommerce">
+                    <div class="icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <h3>Pack E-commerce</h3>
+                    <p class="price">900 €</p>
+                    <p class="description">Parfait pour vendre vos produits ou services en ligne.</p>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Boutique en ligne (jusqu’à 20 produits)</li>
+                        <li><i class="fa-solid fa-check"></i> Paiement sécurisé</li>
+                        <li><i class="fa-solid fa-check"></i> Gestion des commandes</li>
+                        <li><i class="fa-solid fa-check"></i> Intégration livraison et facturation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Option Maintenance -->
+            <div class="maintenance-card">
+                <div class="icon">
+                    <i class="fa-solid fa-cogs"></i>
+                </div>
+                <h3>Option Maintenance - 30 €/mois</h3>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Sauvegarde mensuelle</li>
+                    <li><i class="fa-solid fa-check"></i> Mises à jour techniques</li>
+                    <li><i class="fa-solid fa-check"></i> Support par email</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p>&copy; 2025 Axonity. Tous droits réservés. | 
+            <a href="mentions-legales.html">Mentions légales</a> | 
+            <a href="politique-confidentialite.html">Politique de confidentialité</a></p>
+        </div>
+    </footer>
+
+    <button id="backToTop" style="display:none;position:fixed;bottom:2rem;right:2rem;z-index:1000;" class="btn btn-primary" aria-label="Retour en haut de page">↑</button>
+
+    <!-- Bandeau cookies RGPD -->
+    <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#333;color:#fff;padding:1rem;z-index:2000;text-align:center;">
+        <p style="margin:0 0 1rem 0;">
+            Ce site utilise des cookies pour améliorer votre expérience. 
+            <a href="politique-confidentialite.html" style="color:#FF3C28;">En savoir plus</a>
+        </p>
+        <button onclick="acceptCookies()" class="btn btn-primary" style="margin-right:1rem;">Accepter</button>
+        <button onclick="refuseCookies()" class="btn btn-secondary">Refuser</button>
+    </div>
+
+    <script src="Axonity.js"></script>
+
+</body>
+</html>
