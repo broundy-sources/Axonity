@@ -2191,17 +2191,7 @@ a:focus, button:focus, input:focus, textarea:focus {
     border: 2px solid #A8D9FF;
 }
 
-.pack-pro .popular-badge {
-    position: absolute;
-    top: 15px;
-    right: -30px;
-    background-color: #FF5733;
-    color: #FFFFFF;
-    font-size: 0.8rem;
-    padding: 5px 15px;
-    border-radius: 0 10px 0 10px;
-    transform: rotate(45deg);
-}
+
 
 /* Carte Option Maintenance */
 .maintenance-card {
