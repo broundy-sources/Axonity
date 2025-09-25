@@ -2270,6 +2270,7 @@ a:focus, button:focus, input:focus, textarea:focus {
     .header {
         padding: 0.5rem 1rem;
         position: relative;
+        justify-content: space-between;
     }
     
     .header .container {
@@ -2296,6 +2297,18 @@ a:focus, button:focus, input:focus, textarea:focus {
     .menu-toggle {
         display: flex !important;
         order: 3;
+    }
+    
+    /* Forcer le masquage du bouton contact original */
+    header .btn-contact,
+    .header > .btn-contact,
+    .btn-contact:not(.mobile-contact-btn) {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
     }
     
     /* Navigation mobile */
@@ -2404,7 +2417,10 @@ a:focus, button:focus, input:focus, textarea:focus {
     
     /* Bouton contact mobile - caché dans le header, affiché dans le menu */
     .header .btn-contact {
-        display: none;
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
     }
     
     /* Overlay pour fermer le menu */
@@ -2555,7 +2571,10 @@ a:focus, button:focus, input:focus, textarea:focus {
     
     /* Bouton contact reste caché sur très petits écrans */
     .header .btn-contact {
-        display: none;
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
     }
     
     /* Accueil très petit écran */
