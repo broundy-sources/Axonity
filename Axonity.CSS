@@ -1137,65 +1137,7 @@ h2 {
     font-style: italic;
 }
 
-/* Éléments décoratifs flottants */
-.floating-elements {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 1;
-}
 
-.floating-shape {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.1;
-    animation: float 6s ease-in-out infinite;
-}
-
-.shape-1 {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, var(--primary-blue), var(--tech-orange));
-    top: 20%;
-    right: 10%;
-    animation-delay: 0s;
-}
-
-.shape-2 {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(45deg, var(--tech-orange), var(--primary-blue));
-    top: 60%;
-    left: 5%;
-    animation-delay: 2s;
-}
-
-.shape-3 {
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(90deg, var(--primary-blue), transparent);
-    top: 40%;
-    right: 20%;
-    animation-delay: 4s;
-    border-radius: 30% 70% 70% 30%;
-}
-
-.floating-code {
-    position: absolute;
-    top: 15%;
-    left: 15%;
-    font-family: 'Courier New', monospace;
-    font-size: 0.9rem;
-    color: var(--primary-blue);
-    opacity: 0.3;
-    transform: rotate(-15deg);
-    animation: float 8s ease-in-out infinite;
-    font-weight: 600;
-}
 
 @keyframes float {
     0%, 100% {
