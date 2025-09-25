@@ -115,13 +115,38 @@ class NavigationManager {
                 menuToggle.classList.toggle('active');
             });
             
-            // Fermer le menu lors du clic sur un lien
-            const navLinks = ElementUtils.safeQuerySelectorAll('.navbar a, .nav-menu a');
+            // Gérer les dropdowns mobiles
+            const dropdowns = ElementUtils.safeQuerySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                const link = dropdown.querySelector('a');
+                if (link) {
+                    ElementUtils.safeAddEventListener(link, 'click', (e) => {
+                        if (window.innerWidth <= 768) {
+                            e.preventDefault();
+                            dropdown.classList.toggle('active');
+                        }
+                    });
+                }
+            });
+            
+            // Fermer le menu lors du clic sur un lien (sauf dropdowns)
+            const navLinks = ElementUtils.safeQuerySelectorAll('.navbar a:not(.dropdown > a), .nav-menu a:not(.dropdown > a)');
             navLinks.forEach(link => {
                 ElementUtils.safeAddEventListener(link, 'click', () => {
                     navbar.classList.remove('active');
                     menuToggle.classList.remove('active');
+                    // Fermer tous les dropdowns
+                    dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
                 });
+            });
+            
+            // Fermer le menu en cliquant sur l'overlay
+            ElementUtils.safeAddEventListener(navbar, 'click', (e) => {
+                if (e.target === navbar) {
+                    navbar.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+                }
             });
         }
     }

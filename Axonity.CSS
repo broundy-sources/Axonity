@@ -1751,9 +1751,42 @@ a:focus, button:focus, input:focus, textarea:focus {
     }
 }
 
-/* Cache le bouton menu */
+/* NAVIGATION MOBILE COMPLETE */
+
+/* Bouton hamburger - caché par défaut sur desktop */
 .menu-toggle {
-    display: none !important;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger-line {
+    width: 100%;
+    height: 3px;
+    background-color: var(--deep-navy);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+/* Animation du bouton hamburger */
+.menu-toggle.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
 }
 
 .accueil-video {
@@ -2299,6 +2332,7 @@ a:focus, button:focus, input:focus, textarea:focus {
     /* Header mobile amélioré */
     .header {
         padding: 0.5rem 1rem;
+        position: relative;
     }
     
     .header .container {
@@ -2309,6 +2343,7 @@ a:focus, button:focus, input:focus, textarea:focus {
     /* Logo mobile */
     .logo {
         flex-shrink: 0;
+        z-index: 1002;
     }
     
     .logo-image {
@@ -2320,16 +2355,114 @@ a:focus, button:focus, input:focus, textarea:focus {
         font-size: 1.5rem;
     }
     
-    /* Navigation mobile */
-    .navbar ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.5rem;
+    /* Afficher le bouton hamburger sur mobile */
+    .menu-toggle {
+        display: flex !important;
+        order: 3;
     }
     
-    .navbar ul li a {
-        padding: 0.3rem 0.6rem;
+    /* Navigation mobile */
+    .navbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: var(--white);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 1000;
+        padding: 80px 0 0 0;
+        overflow-y: auto;
+    }
+    
+    .navbar.active {
+        right: 0;
+    }
+    
+    .nav-menu {
+        flex-direction: column !important;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        gap: 0 !important;
+    }
+    
+    .nav-menu li {
+        width: 100%;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .nav-menu li a {
+        display: block;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--deep-navy);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+    }
+    
+    .nav-menu li a:hover {
+        background: var(--light-gray);
+        color: var(--primary-blue);
+        padding-left: 2.5rem;
+    }
+    
+    /* Dropdown mobile */
+    .dropdown-menu {
+        position: static !important;
+        display: none;
+        box-shadow: none;
+        background: var(--light-gray);
+        border-radius: 0;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+    
+    .dropdown-menu li a {
+        padding: 0.8rem 3rem;
         font-size: 0.9rem;
+        color: var(--medium-gray);
+    }
+    
+    .dropdown-menu li a:hover {
+        background: #E2E8F0;
+        padding-left: 3.5rem;
+    }
+    
+    /* Bouton contact mobile */
+    .btn-contact {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1001;
+        border-radius: 50px;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        box-shadow: 0 4px 12px rgba(255, 87, 51, 0.3);
+    }
+    
+    /* Overlay pour fermer le menu */
+    .navbar::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: -100vw;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+        transition: left 0.3s ease;
+    }
+    
+    .navbar.active::before {
+        left: -280px;
     }
     
     /* Section accueil mobile améliorée */
@@ -2442,12 +2575,29 @@ a:focus, button:focus, input:focus, textarea:focus {
     }
     
     /* Navigation très petit écran */
-    .navbar ul {
-        gap: 0.3rem;
+    .navbar {
+        width: 100%;
+        right: -100%;
     }
     
-    .navbar ul li a {
-        padding: 0.25rem 0.4rem;
+    .navbar.active {
+        right: 0;
+    }
+    
+    .nav-menu li a {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .dropdown-menu li a {
+        padding: 0.6rem 2.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .btn-contact {
+        bottom: 15px;
+        right: 15px;
+        padding: 0.6rem 1.2rem;
         font-size: 0.8rem;
     }
     
