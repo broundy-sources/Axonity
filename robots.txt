@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://broundy-sources.github.io/Axonity/sitemap.xml
+
+# Règles spécifiques
+Disallow: /admin/
+Disallow: /*.css$
+Disallow: /*.js$
+
+# Crawler directives
+Crawl-delay: 1
