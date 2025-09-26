@@ -483,7 +483,15 @@ window.addEventListener('load', () => {
 });
 
 // ==========================================
-// FONCTION D'ENVOI EMAIL
+// EMAILJS CONFIGURATION
+// ==========================================
+// Initialisation EmailJS avec votre clé publique
+(function() {
+    emailjs.init("VOTRE_CLE_PUBLIQUE_EMAILJS"); // À remplacer par votre clé
+})();
+
+// ==========================================
+// FONCTION D'ENVOI EMAIL DIRECT
 // ==========================================
 function sendEmail() {
     // Récupérer les valeurs du formulaire
@@ -498,13 +506,46 @@ function sendEmail() {
         return;
     }
     
-    // Construire le corps de l'email
-    const emailBody = `Bonjour,%0D%0A%0D%0ANom: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0A%0D%0AMessage:%0D%0A${encodeURIComponent(message)}%0D%0A%0D%0ACordialement,%0D%0A${encodeURIComponent(name)}`;
+    // Désactiver le bouton pendant l'envoi
+    const submitBtn = document.querySelector('.btn-submit');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 0.5rem;"></i>Envoi en cours...';
+    submitBtn.disabled = true;
     
-    // Construire le lien mailto
-    const mailtoLink = `mailto:axonitypro@gmail.com?subject=${encodeURIComponent(subject)}&body=${emailBody}`;
+    // Paramètres pour EmailJS
+    const templateParams = {
+        from_name: name,
+        from_email: email,
+        subject: subject,
+        message: message,
+        to_email: 'axonitypro@gmail.com'
+    };
     
-    // Ouvrir le client email
-    window.location.href = mailtoLink;
+    // Envoyer l'email via EmailJS
+    emailjs.send('VOTRE_SERVICE_ID', 'VOTRE_TEMPLATE_ID', templateParams)
+        .then(function(response) {
+            // Succès
+            console.log('Email envoyé avec succès!', response.status, response.text);
+            alert('✅ Votre message a été envoyé avec succès ! Nous vous répondrons sous 24h.');
+            
+            // Réinitialiser le formulaire
+            document.getElementById('contactForm').reset();
+            
+        }, function(error) {
+            // Erreur - Fallback vers mailto
+            console.log('Erreur EmailJS, utilisation du fallback mailto...', error);
+            
+            // Construire le lien mailto comme fallback
+            const emailBody = `Bonjour,%0D%0A%0D%0ANom: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0A%0D%0AMessage:%0D%0A${encodeURIComponent(message)}%0D%0A%0D%0ACordialement,%0D%0A${encodeURIComponent(name)}`;
+            const mailtoLink = `mailto:axonitypro@gmail.com?subject=${encodeURIComponent(subject)}&body=${emailBody}`;
+            
+            alert('⚡ Ouverture de votre client email...');
+            window.location.href = mailtoLink;
+        })
+        .finally(function() {
+            // Réactiver le bouton
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        });
 }
 
