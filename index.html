@@ -393,23 +393,7 @@
                 <h1>Prêt à concrétiser votre projet ?</h1>
                 <p>Contactez-nous pour une discussion personnalisée et un devis gratuit.</p>
                 
-                <!-- Contact direct -->
-                <div class="contact-info" style="text-align: center; margin-bottom: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border-radius: 12px; border: 1px solid #e2e8f0;">
-                    <h3 style="color: var(--primary-blue); margin-bottom: 1rem; font-size: 1.2rem;">
-                        <i class="fas fa-envelope" style="margin-right: 0.5rem; color: var(--tech-orange);"></i>
-                        Contact Direct
-                    </h3>
-                    <p style="font-size: 1.1rem; margin: 0;">
-                        <a href="mailto:axonitypro@gmail.com?subject=Demande de devis - Site web&body=Bonjour,%0D%0A%0D%0AJe souhaiterais obtenir plus d'informations concernant vos services.%0D%0A%0D%0AMon projet :%0D%0A%0D%0ACordialement," 
-                           style="color: var(--primary-blue); text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.3s ease;"
-                           onmouseover="this.style.backgroundColor='var(--primary-blue)'; this.style.color='white';"
-                           onmouseout="this.style.backgroundColor='transparent'; this.style.color='var(--primary-blue)';">
-                            📧 axonitypro@gmail.com
-                        </a>
-                    </p>
-                </div>
-
-                <form class="contact-form" action="mailto:axonitypro@gmail.com" method="post" enctype="text/plain" aria-label="Formulaire de contact">
+                <form class="contact-form" id="contactForm" aria-label="Formulaire de contact">
                     <label for="name" class="sr-only">Votre nom</label>
                     <input type="text" id="name" name="name" placeholder="Votre Nom" required aria-required="true">
                     
@@ -422,7 +406,7 @@
                     <label for="message" class="sr-only">Votre message</label>
                     <textarea id="message" name="message" placeholder="Décrivez votre projet en détail..." rows="6" required aria-required="true"></textarea>
                     
-                    <button type="submit" class="btn btn-submit">
+                    <button type="button" class="btn btn-submit" onclick="sendEmail()">
                         <i class="fas fa-paper-plane" style="margin-right: 0.5rem;"></i>
                         Envoyer ma demande
                     </button>

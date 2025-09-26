@@ -482,3 +482,29 @@ window.addEventListener('load', () => {
     axonityApp.hideLoader();
 });
 
+// ==========================================
+// FONCTION D'ENVOI EMAIL
+// ==========================================
+function sendEmail() {
+    // Récupérer les valeurs du formulaire
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+    
+    // Vérifier que tous les champs sont remplis
+    if (!name || !email || !subject || !message) {
+        alert('Veuillez remplir tous les champs avant d\'envoyer votre message.');
+        return;
+    }
+    
+    // Construire le corps de l'email
+    const emailBody = `Bonjour,%0D%0A%0D%0ANom: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0A%0D%0AMessage:%0D%0A${encodeURIComponent(message)}%0D%0A%0D%0ACordialement,%0D%0A${encodeURIComponent(name)}`;
+    
+    // Construire le lien mailto
+    const mailtoLink = `mailto:axonitypro@gmail.com?subject=${encodeURIComponent(subject)}&body=${emailBody}`;
+    
+    // Ouvrir le client email
+    window.location.href = mailtoLink;
+}
+
