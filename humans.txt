@@ -1,0 +1,12 @@
+/* TEAM */
+Developer: Axonity Team
+Contact: contact[at]axonity.fr
+Twitter: @axonity
+From: France
+
+/* SITE */
+Last update: 2025/09/26
+Language: Français / French
+Standards: HTML5, CSS3, JavaScript ES6
+Components: Responsive Design, SEO Optimized
+Software: VS Code, Git

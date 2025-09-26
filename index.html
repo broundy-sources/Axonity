@@ -43,27 +43,92 @@
         "description": "Agence web professionnelle spécialisée dans la création de sites vitrines, portfolios et e-commerce",
         "url": "https://broundy-sources.github.io/Axonity/",
         "logo": "https://broundy-sources.github.io/Axonity/Logo.png",
+        "sameAs": [
+            "https://github.com/broundy-sources"
+        ],
+        "foundingDate": "2025",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "15"
+        },
         "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "Customer Service",
-            "availableLanguage": "French"
+            "availableLanguage": "French",
+            "areaServed": "FR"
         },
         "serviceArea": {
             "@type": "Country",
             "name": "France"
         },
-        "services": [
-            "Création de sites vitrines",
-            "Développement de portfolios",
-            "E-commerce léger",
-            "Maintenance web",
-            "Design responsive"
+        "makesOffer": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Création de sites vitrines",
+                    "description": "Développement de sites web professionnels pour présenter votre activité"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Développement de portfolios",
+                    "description": "Création de portfolios créatifs pour artistes et professionnels"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "E-commerce léger",
+                    "description": "Solutions e-commerce simples et efficaces"
+                }
+            }
         ]
     }
     </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+    
+    <!-- Verification Google Search Console -->
+    <meta name="google-site-verification" content="VOTRE_CODE_VERIFICATION_GOOGLE">
+    
+    <!-- Balises additionnelles pour SEO -->
+    <link rel="canonical" href="https://broundy-sources.github.io/Axonity/">
+    <link rel="author" href="humans.txt">
+    <link rel="alternate" type="application/rss+xml" title="Axonity RSS Feed" href="feed.xml">
+    <meta name="geo.region" content="FR">
+    <meta name="geo.placename" content="France">
+    <meta name="ICBM" content="46.603354, 1.888334">
+    <meta name="DC.title" content="Axonity - Agence Web Professionnelle">
+    <meta name="rating" content="general">
+    <meta name="distribution" content="global">
+    <meta name="revisit-after" content="7 days">
+    <meta name="subject" content="Agence web professionnelle, création sites internet">
+    <meta name="classification" content="Business">
 </head>
 <body>
-
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
     <!-- Indicateur de progression du scroll -->
     <div id="scrollProgress"></div>
 
@@ -113,14 +178,14 @@
             
             <div class="accueil-container">
                 <!-- Colonne gauche : Texte -->
-                <div class="accueil-texte">
+                <div class="accueil-texte" itemscope itemtype="https://schema.org/WebDesignCompany">
                     <div class="hero-badge">
-                        <span>� Axonity - L'excellence digitale</span>
+                        <span>✨ Axonity - L'excellence digitale</span>
                     </div>
-                    <h1>Nous créons des <span class="highlight">expériences web</span> qui marquent les esprits</h1>
-                    <h2>Votre partenaire digital pour une présence en ligne authentique et percutante</h2>
-                    <p>
-                        Chez Axonity, chaque projet est une histoire unique. Nous combinons créativité, innovation technique et expertise métier pour donner vie à vos ambitions digitales.
+                    <h1 itemprop="name">Nous créons des <span class="highlight">expériences web</span> qui marquent les esprits</h1>
+                    <h2 itemprop="slogan">Votre partenaire digital pour une présence en ligne authentique et percutante</h2>
+                    <p itemprop="description">
+                        Chez <span itemprop="legalName">Axonity</span>, chaque projet est une histoire unique. Nous combinons créativité, innovation technique et expertise métier pour donner vie à vos ambitions digitales.
                         <br><strong>Approche personnalisée • Technologies modernes • Accompagnement complet</strong>
                     </p>
                     <div class="hero-buttons">

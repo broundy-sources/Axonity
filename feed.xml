@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Axonity - Agence Web Professionnelle</title>
+        <link>https://broundy-sources.github.io/Axonity/</link>
+        <description>Actualités et nouveautés de l'agence web Axonity. Création de sites vitrines, portfolios et solutions e-commerce.</description>
+        <language>fr-FR</language>
+        <atom:link href="https://broundy-sources.github.io/Axonity/feed.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Thu, 26 Sep 2025 12:00:00 +0200</lastBuildDate>
+        <pubDate>Thu, 26 Sep 2025 12:00:00 +0200</pubDate>
+        <ttl>1440</ttl>
+        
+        <item>
+            <title>Lancement officiel d'Axonity - Votre nouvelle agence web</title>
+            <link>https://broundy-sources.github.io/Axonity/#accueil</link>
+            <description>Découvrez Axonity, votre nouvelle agence web spécialisée dans la création de sites vitrines, portfolios professionnels et solutions e-commerce légères. Nous combinons créativité et expertise technique pour donner vie à vos projets digitaux.</description>
+            <pubDate>Thu, 26 Sep 2025 12:00:00 +0200</pubDate>
+            <guid isPermaLink="true">https://broundy-sources.github.io/Axonity/#accueil</guid>
+            <category>Annonce</category>
+            <category>Web Design</category>
+        </item>
+        
+        <item>
+            <title>Services Axonity - Solutions web personnalisées</title>
+            <link>https://broundy-sources.github.io/Axonity/#services</link>
+            <description>Explorez notre gamme complète de services : sites vitrines professionnels, portfolios créatifs, solutions e-commerce et maintenance web. Des solutions sur mesure pour tous vos besoins digitaux.</description>
+            <pubDate>Thu, 26 Sep 2025 11:00:00 +0200</pubDate>
+            <guid isPermaLink="true">https://broundy-sources.github.io/Axonity/#services</guid>
+            <category>Services</category>
+            <category>Web Development</category>
+        </item>
+        
+        <item>
+            <title>Portfolio Axonity - Nos réalisations créatives</title>
+            <link>https://broundy-sources.github.io/Axonity/#portfolio</link>
+            <description>Découvrez notre portfolio de réalisations web : projets créatifs, designs innovants et solutions techniques. Chaque projet reflète notre expertise et notre passion pour l'excellence digitale.</description>
+            <pubDate>Thu, 26 Sep 2025 10:00:00 +0200</pubDate>
+            <guid isPermaLink="true">https://broundy-sources.github.io/Axonity/#portfolio</guid>
+            <category>Portfolio</category>
+            <category>Réalisations</category>
+        </item>
+    </channel>
+</rss>
