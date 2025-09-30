@@ -487,7 +487,7 @@ window.addEventListener('load', () => {
 // ==========================================
 // Initialisation EmailJS avec votre clé publique
 (function() {
-    emailjs.init("VOTRE_CLE_PUBLIQUE_EMAILJS"); // À remplacer par votre clé
+    emailjs.init("Wv1AyHae0vtIGiwIz");
 })();
 
 // ==========================================
@@ -542,12 +542,12 @@ function sendEmail() {
     };
     
     // Envoyer l'email principal vers Axonity
-    emailjs.send('VOTRE_SERVICE_ID', 'VOTRE_TEMPLATE_ID', templateParamsToAxonity)
+    emailjs.send('service_hn5umux', 'template_rpiqmzb', templateParamsToAxonity)
         .then(function(response) {
             console.log('Email principal envoyé avec succès!', response.status, response.text);
             
             // Envoyer l'email de confirmation au visiteur
-            return emailjs.send('VOTRE_SERVICE_ID', 'VOTRE_TEMPLATE_CONFIRMATION_ID', templateParamsToVisitor);
+            return emailjs.send('service_hn5umux', 'template_dpipoeo', templateParamsToVisitor);
         })
         .then(function(response) {
             console.log('Email de confirmation envoyé avec succès!', response.status, response.text);
