@@ -491,7 +491,7 @@ window.addEventListener('load', () => {
 })();
 
 // ==========================================
-// FONCTION D'ENVOI EMAIL DIRECT
+// FONCTION D'ENVOI EMAIL DIRECT AVEC AUTO-RÉPONSE
 // ==========================================
 function sendEmail() {
     // Récupérer les valeurs du formulaire
@@ -506,40 +506,76 @@ function sendEmail() {
         return;
     }
     
+    // Vérifier le format de l'email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Veuillez saisir une adresse email valide.');
+        return;
+    }
+    
     // Désactiver le bouton pendant l'envoi
     const submitBtn = document.querySelector('.btn-submit');
     const originalText = submitBtn.innerHTML;
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 0.5rem;"></i>Envoi en cours...';
     submitBtn.disabled = true;
     
-    // Paramètres pour EmailJS
-    const templateParams = {
+    // Paramètres pour l'email principal (vers Axonity)
+    const templateParamsToAxonity = {
         from_name: name,
         from_email: email,
         subject: subject,
         message: message,
-        to_email: 'axonitypro@gmail.com'
+        to_email: 'contact@axonity.fr',
+        to_name: 'Axonity'
     };
     
-    // Envoyer l'email via EmailJS
-    emailjs.send('VOTRE_SERVICE_ID', 'VOTRE_TEMPLATE_ID', templateParams)
+    // Paramètres pour l'email de confirmation (vers le visiteur)
+    const templateParamsToVisitor = {
+        to_name: name,
+        to_email: email,
+        from_name: 'Axonity',
+        from_email: 'contact@axonity.fr',
+        subject: `Confirmation de réception - ${subject}`,
+        original_subject: subject,
+        original_message: message,
+        company_name: 'Axonity'
+    };
+    
+    // Envoyer l'email principal vers Axonity
+    emailjs.send('VOTRE_SERVICE_ID', 'VOTRE_TEMPLATE_ID', templateParamsToAxonity)
         .then(function(response) {
-            // Succès
-            console.log('Email envoyé avec succès!', response.status, response.text);
-            alert('✅ Votre message a été envoyé avec succès ! Nous vous répondrons sous 24h.');
+            console.log('Email principal envoyé avec succès!', response.status, response.text);
+            
+            // Envoyer l'email de confirmation au visiteur
+            return emailjs.send('VOTRE_SERVICE_ID', 'VOTRE_TEMPLATE_CONFIRMATION_ID', templateParamsToVisitor);
+        })
+        .then(function(response) {
+            console.log('Email de confirmation envoyé avec succès!', response.status, response.text);
+            
+            // Afficher un message de succès complet
+            alert(`✅ Parfait ! Votre message a été envoyé avec succès !
+
+📧 Vous allez recevoir un email de confirmation à l'adresse : ${email}
+
+⏰ Nous vous répondrons sous 24h maximum.
+
+Merci de votre confiance ! 
+L'équipe Axonity`);
             
             // Réinitialiser le formulaire
             document.getElementById('contactForm').reset();
             
-        }, function(error) {
-            // Erreur - Fallback vers mailto
-            console.log('Erreur EmailJS, utilisation du fallback mailto...', error);
+        })
+        .catch(function(error) {
+            console.log('Erreur lors de l\'envoi, utilisation du fallback mailto...', error);
             
-            // Construire le lien mailto comme fallback
+            // Fallback vers mailto en cas d'erreur EmailJS
             const emailBody = `Bonjour,%0D%0A%0D%0ANom: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0A%0D%0AMessage:%0D%0A${encodeURIComponent(message)}%0D%0A%0D%0ACordialement,%0D%0A${encodeURIComponent(name)}`;
-            const mailtoLink = `mailto:axonitypro@gmail.com?subject=${encodeURIComponent(subject)}&body=${emailBody}`;
+            const mailtoLink = `mailto:contact@axonity.fr?subject=${encodeURIComponent(subject)}&body=${emailBody}`;
             
-            alert('⚡ Ouverture de votre client email...');
+            alert(`⚡ Ouverture de votre client email...
+            
+Une fois votre email envoyé, vous recevrez automatiquement une confirmation de réception.`);
             window.location.href = mailtoLink;
         })
         .finally(function() {
