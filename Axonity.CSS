@@ -1084,47 +1084,69 @@ h2 {
     }
 }
 
-/* Responsive pour highlight-super */
+/* Responsive pour highlight-super - Lisibilité mobile améliorée */
 @media (max-width: 768px) {
     .highlight-super {
-        font-size: 1.08em;
+        /* Couleur solide pour meilleure lisibilité sur mobile */
+        background: none !important;
+        -webkit-background-clip: unset !important;
+        -webkit-text-fill-color: var(--primary-blue) !important;
+        background-clip: unset !important;
+        color: var(--primary-blue) !important;
+        
+        font-size: 1.15em;
         font-weight: 900;
-        letter-spacing: 0.8px;
-        line-height: 1.2;
-        text-shadow: 0 3px 6px rgba(37, 99, 235, 0.3);
+        letter-spacing: 1px;
+        line-height: 1.3;
+        text-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+        
+        /* Arrière-plan plus visible sur mobile */
+        background: rgba(37, 99, 235, 0.08) !important;
+        padding: 0.2rem 0.4rem;
+        border-radius: 6px;
+        border: 2px solid rgba(37, 99, 235, 0.2);
     }
     
     .highlight-super::before {
-        border-radius: 6px;
-        top: -3px;
-        left: -6px;
-        right: -6px;
-        bottom: -3px;
+        display: none; /* Masquer l'effet hover sur mobile */
     }
 }
 
 @media (max-width: 480px) {
     .highlight-super {
-        font-size: 1.1em;
+        /* Version très contrastée pour très petits écrans */
+        background: var(--primary-blue) !important;
+        -webkit-background-clip: unset !important;
+        -webkit-text-fill-color: white !important;
+        background-clip: unset !important;
+        color: white !important;
+        
+        font-size: 1.2em;
         font-weight: 900;
-        letter-spacing: 1px;
-        text-shadow: 0 4px 8px rgba(37, 99, 235, 0.4);
-        background: linear-gradient(135deg, 
-            var(--primary-blue) 0%, 
-            var(--tech-orange) 50%, 
-            var(--primary-blue) 100%);
-        background-size: 200% 200%;
-        animation: highlightPulse 3s ease-in-out infinite, 
-                   gradientShift 4s ease-in-out infinite;
+        letter-spacing: 1.2px;
+        line-height: 1.4;
+        text-shadow: none;
+        
+        /* Style de badge sur très petits écrans */
+        padding: 0.3rem 0.6rem;
+        border-radius: 8px;
+        border: none;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+        
+        /* Animation simplifiée pour mobile */
+        animation: mobileHighlightPulse 2s ease-in-out infinite;
     }
 }
 
-@keyframes gradientShift {
+/* Animation spécifique mobile plus douce */
+@keyframes mobileHighlightPulse {
     0%, 100% {
-        background-position: 0% 50%;
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
     }
     50% {
-        background-position: 100% 50%;
+        transform: scale(1.02);
+        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.6);
     }
 }
 
@@ -3141,8 +3163,11 @@ a:focus, button:focus, input:focus, textarea:focus {
     
     .accueil-texte h1 {
         font-size: 2.2rem !important;
-        line-height: 1.2;
+        line-height: 1.3; /* Améliorer la ligne pour le highlight */
         margin-bottom: 1rem;
+        /* Assurer une bonne lisibilité du titre complet */
+        color: var(--deep-navy) !important;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     }
     
     .accueil-texte h2 {
@@ -3310,7 +3335,10 @@ a:focus, button:focus, input:focus, textarea:focus {
     
     .accueil-texte h1 {
         font-size: 1.8rem !important;
-        line-height: 1.1;
+        line-height: 1.2; /* Améliorer l'espacement pour le highlight */
+        /* Assurer le contraste sur très petits écrans */
+        color: var(--deep-navy) !important;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
     }
     
     .accueil-texte h2 {
