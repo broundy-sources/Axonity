@@ -2114,7 +2114,7 @@ a:focus, button:focus, input:focus, textarea:focus {
 .professional-quote {
     position: absolute;
     bottom: 15%;
-    left: 10%;
+    left: -5%; /* Déplacée vers la gauche */
     z-index: 8;
 }
 
@@ -2271,7 +2271,7 @@ a:focus, button:focus, input:focus, textarea:focus {
     
     .professional-quote {
         bottom: 10%;
-        left: 5%;
+        left: 0%; /* Alignée au bord gauche sur mobile */
     }
     
     .quote-content {
@@ -2327,8 +2327,8 @@ a:focus, button:focus, input:focus, textarea:focus {
     
     .professional-quote {
         bottom: 5%;
-        left: 2%;
-        max-width: 80%;
+        left: -2%; /* Légèrement débordante à gauche sur très petits écrans */
+        max-width: 85%; /* Augmenter la largeur max */
     }
     
     .quote-content {
