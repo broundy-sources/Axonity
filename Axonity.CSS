@@ -1477,7 +1477,6 @@ h2 {
     max-width: 50%;
     text-align: left;
     align-self: flex-start; /* Assure l'alignement au début */
-    padding-left: 1rem; /* Profondeur padding pour équilibrer avec l'accueil visuel */
 }
 
 .accueil-texte h1 {
@@ -1526,11 +1525,9 @@ h2 {
     flex: 1; /* Identique à accueil-texte */
     max-width: 50%; /* Identique à accueil-texte pour même largeur */
     text-align: center;
-    padding: 1rem; /* Même profondeur de padding que l'accueil texte */
     margin-top: 0;
     align-self: flex-start;
     position: relative;
-    min-height: 500px; /* Hauteur minimum pour contenir tous les éléments */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2008,7 +2005,6 @@ a:focus, button:focus, input:focus, textarea:focus {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 1rem; /* Même profondeur que l'accueil visuel */
     padding-right: 1rem;
 }
 
