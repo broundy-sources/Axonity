@@ -1084,7 +1084,7 @@ h2 {
     }
 }
 
-/* Responsive pour highlight-super - Maximum de lisibilité mobile */
+/* Responsive pour highlight-super - SANS ANIMATION - Lisibilité pure */
 @media (max-width: 768px) {
     /* Optimisation du titre principal sur mobile */
     .accueil-texte h1 {
@@ -1096,39 +1096,43 @@ h2 {
     }
     
     .highlight-super {
-        /* Badge blanc sur fond coloré pour contraste maximum */
-        background: linear-gradient(135deg, #2563EB, #3B82F6) !important;
+        /* Style fixe sans animation - Maximum de lisibilité */
+        background: #2563EB !important;
         -webkit-background-clip: unset !important;
         -webkit-text-fill-color: white !important;
         background-clip: unset !important;
         color: white !important;
         
-        font-size: 1.3em;
+        font-size: 1.4em;
         font-weight: 900;
-        letter-spacing: 1.5px;
-        line-height: 1.2;
+        letter-spacing: 1px;
+        line-height: 1.3;
         text-transform: uppercase;
         
-        /* Style badge très visible */
-        padding: 0.4rem 0.8rem;
-        border-radius: 12px;
+        /* Style badge fixe très visible */
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
         border: 3px solid white;
-        box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
         
-        /* Position relative pour éviter les problèmes d'affichage */
+        /* Position simple sans animation */
         position: relative;
         display: inline-block;
         z-index: 10;
+        margin: 0 0.2rem;
         
-        /* Espacement autour du texte */
-        margin: 0 0.3rem;
-        
-        /* Animation pulse pour attirer l'attention */
-        animation: mobilePulse 2s ease-in-out infinite;
+        /* AUCUNE ANIMATION - style fixe uniquement */
+        animation: none !important;
+        transform: none !important;
+        transition: none !important;
     }
     
     .highlight-super::before {
-        display: none; /* Masquer l'effet hover sur mobile */
+        display: none !important;
+    }
+    
+    .highlight-super::after {
+        display: none !important;
     }
 }
 
@@ -1143,52 +1147,45 @@ h2 {
     }
     
     .highlight-super {
-        /* Version ultra-contrastée pour très petits écrans */
-        background: #FF5733 !important; /* Orange vif pour maximum contraste */
+        /* Version ultra-simple et ultra-contrastée */
+        background: #FF5733 !important;
         -webkit-background-clip: unset !important;
         -webkit-text-fill-color: white !important;
         background-clip: unset !important;
         color: white !important;
         
-        font-size: 1.4em;
+        font-size: 1.5em;
         font-weight: 900;
-        letter-spacing: 2px;
-        line-height: 1.3;
+        letter-spacing: 1px;
+        line-height: 1.4;
         text-transform: uppercase;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         
-        /* Style badge ultra-visible */
-        padding: 0.5rem 1rem;
-        border-radius: 15px;
-        border: 4px solid white;
-        box-shadow: 0 8px 25px rgba(255, 87, 51, 0.7);
+        /* Style badge ultra-simple */
+        padding: 0.6rem 1.2rem;
+        border-radius: 10px;
+        border: 3px solid white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         
-        /* Position et spacing optimisés */
+        /* Position simple - pas de block, reste inline */
         position: relative;
         display: inline-block;
         z-index: 10;
-        margin: 0.3rem 0.2rem;
+        margin: 0 0.3rem;
         
-        /* Forcer une nouvelle ligne sur très petits écrans pour lisibilité */
-        display: block;
-        text-align: center;
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
-        
-        /* Animation pulse plus marquée */
-        animation: mobileHighlightPulse 1.5s ease-in-out infinite;
+        /* AUCUNE ANIMATION DU TOUT */
+        animation: none !important;
+        transform: none !important;
+        transition: none !important;
     }
-}
-
-/* Animations pour mobile */
-@keyframes mobilePulse {
-    0%, 100% { transform: scale(1); box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6); }
-    50% { transform: scale(1.05); box-shadow: 0 8px 25px rgba(37, 99, 235, 0.8); }
-}
-
-@keyframes mobileHighlightPulse {
-    0%, 100% { transform: scale(1); box-shadow: 0 8px 25px rgba(255, 87, 51, 0.7); }
-    50% { transform: scale(1.08); box-shadow: 0 12px 30px rgba(255, 87, 51, 0.9); }
+    
+    .highlight-super::before {
+        display: none !important;
+    }
+    
+    .highlight-super::after {
+        display: none !important;
+    }
 }
 
 /* Animation spécifique mobile plus douce */
