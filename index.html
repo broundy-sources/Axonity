@@ -31,6 +31,14 @@
     <meta name="theme-color" content="#2563EB">
     
     <link rel="stylesheet" href="Axonity.CSS">
+    
+    <!-- Préchargement des ressources critiques -->
+    <link rel="preload" href="Logo.png" as="image" type="image/png">
+    <link rel="preload" href="Exemple1.png" as="image" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
@@ -240,7 +248,7 @@
                         <!-- Ordinateur principal centré et mis en valeur -->
                         <div class="device laptop central-device">
                             <div class="screen">
-                                <img src="Exemple1.png" alt="Site web professionnel sur iMac">
+                                <img src="Exemple1.png" alt="Site web professionnel responsive sur iMac - Création Axonity" loading="lazy">
                                 <!-- Badge de qualité épuré -->
                                 <div class="quality-badge">
                                     <i class="fas fa-star"></i>
@@ -350,17 +358,17 @@
                         <p>Une présence en ligne professionnelle pour présenter votre entreprise et vos activités.</p>
                     </div>
                     <div class="service-item">
-                        <img src="Mon-Portfolio.png" alt="Icône Portfolio Professionnel">
+                        <img src="Mon-Portfolio.png" alt="Icône Portfolio Professionnel" loading="lazy" width="80" height="80">
                         <h4>Portfolio Pro</h4>
                         <p>Mettez en valeur vos œuvres, projets et compétences avec un portfolio élégant et fonctionnel.</p>
                     </div>
                     <div class="service-item">
-                        <img src="Boutique-ecommerce.png" alt="Icône E-commerce léger">
+                        <img src="Boutique-ecommerce.png" alt="Icône E-commerce léger" loading="lazy" width="80" height="80">
                         <h4>E-commerce Léger</h4>
                         <p>Démarrez la vente en ligne de vos produits avec une boutique simple et intuitive.</p>
                     </div>
                     <div class="service-item">
-                        <img src="Maintenance-herbergement.png" alt="Icône Maintenance et Hébergement">
+                        <img src="Maintenance-herbergement.png" alt="Icône Maintenance et Hébergement" loading="lazy" width="80" height="80">
                         <h4>Maintenance & Hébergement</h4>
                         <p>Nous nous occupons de l'hébergement, des mises à jour et de la sécurité de votre site.</p>
                     </div>
@@ -660,6 +668,7 @@
     </div>
 
     <script src="Axonity.js"></script>
+    <script src="performance-optimizer.js"></script>
 
 </body>
 </html>

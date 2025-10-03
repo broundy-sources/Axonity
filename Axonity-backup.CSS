@@ -1,43 +1,177 @@
-/* AXONITY CSS - Version Optimisée */
-/* Variables globales */
+/* CHARTE GRAPHIQUE AXONITY - Variables CSS */
 :root {
-    --primary-blue: #2563EB; --tech-orange: #F59E0B; --deep-navy: #1E293B;
-    --light-gray: #F8FAFC; --medium-gray: #64748B; --success-green: #10B981; --warning-red: #EF4444;
+    /* Couleurs principales */
+    --primary-blue: #2563EB;
+    --tech-orange: #F59E0B;
+    --deep-navy: #1E293B;
+    
+    /* Couleurs secondaires */
+    --light-gray: #F8FAFC;
+    --medium-gray: #64748B;
+    --success-green: #10B981;
+    --warning-red: #EF4444;
+    
+    /* Dégradés */
     --gradient-primary: linear-gradient(135deg, #2563EB 0%, #F59E0B 100%);
     --gradient-subtle: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
-    --primary-color: var(--deep-navy); --secondary-color: var(--tech-orange);
-    --bg-light: var(--light-gray); --bg-light-alt: #E2E8F0; --text-secondary: var(--medium-gray);
-    --hover-color: #3B82F6; --shadow-color: rgba(30, 41, 59, 0.1); --white: #FFFFFF;
-    --text-color: var(--deep-navy); --border-color: #E2E8F0;
-    --font-heading: 'Montserrat', sans-serif; --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --spacing-xs: 0.25rem; --spacing-sm: 0.5rem; --spacing-md: 1rem; --spacing-lg: 1.5rem;
-    --spacing-xl: 2rem; --spacing-2xl: 3rem; --spacing-3xl: 4rem;
-    --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px;
+    
+    /* Anciens noms conservés pour compatibilité */
+    --primary-color: var(--deep-navy);
+    --secondary-color: var(--tech-orange);
+    --bg-light: var(--light-gray);
+    --bg-light-alt: #E2E8F0;
+    --text-secondary: var(--medium-gray);
+    --hover-color: #3B82F6;
+    --shadow-color: rgba(30, 41, 59, 0.1);
+    --white: #FFFFFF;
+    --text-color: var(--deep-navy);
+    --border-color: #E2E8F0;
+    
+    /* Typographie */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* Espacements */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    
+    /* Border radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
 }
 
-/* Reset & Base */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { overflow-x: hidden; }
-body { background: var(--bg-light); color: var(--primary-color); font-family: var(--font-body); line-height: 1.6; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Typography */
-h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--primary-color); margin-bottom: var(--spacing-lg); font-weight: 600; line-height: 1.2; }
-h1 { font-size: 3rem; font-weight: 700; }
-h2 { font-size: 2.25rem; font-weight: 600; }
-h3 { font-size: 1.875rem; font-weight: 600; }
-h4 { font-size: 1.5rem; font-weight: 500; }
-p, li, span { font-family: var(--font-body); font-size: 1rem; line-height: 1.6; }
-p { margin-bottom: var(--spacing-sm); }
+html, body {
+    overflow-x: hidden; /* Empêche le débordement horizontal */
+}
 
-/* Liens et Boutons condensés */
-a { color: var(--primary-color); text-decoration: none; transition: color 0.2s; }
-a:hover { color: var(--secondary-color); text-decoration: underline; }
-.btn { display: inline-block; padding: 0.8rem 1.8rem; border-radius: 5px; font-weight: 600; text-align: center; transition: all 0.3s ease; border: none; cursor: pointer; max-width: 100%; }
-.btn-primary { background: var(--gradient-primary); color: var(--white); border-radius: var(--radius-sm); padding: 0.75rem 2rem; font-size: 1rem; font-weight: 600; font-family: var(--font-heading); box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25); transition: all 0.3s ease; border: none; }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35); }
-.btn-secondary { background-color: transparent; color: var(--primary-blue); border: 2px solid var(--primary-blue); border-radius: var(--radius-sm); padding: 0.75rem 2rem; font-size: 1rem; font-weight: 600; font-family: var(--font-heading); transition: all 0.3s ease; }
-.btn-secondary:hover { background-color: var(--primary-blue); color: var(--white); transform: translateY(-1px); }
+body {
+    background: var(--bg-light);
+    color: var(--primary-color);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem; /* Ajoute un padding pour éviter que le contenu touche les bords */
+}
+
+/* Typographie Axonity */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+h1 { 
+    font-size: 3rem;
+    font-weight: 700;
+}
+h2 { 
+    font-size: 2.25rem;
+    font-weight: 600;
+}
+h3 { 
+    font-size: 1.875rem;
+    font-weight: 600;
+}
+h4 { 
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+p, li, span {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+h3 { font-size: 2rem; }
+h4 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Liens et Boutons */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    max-width: 100%;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: var(--white);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-1px);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
 
 /* Bouton "Nous contacter" */
 .btn-contact {
