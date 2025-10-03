@@ -1172,6 +1172,96 @@ h2 {
     font-weight: 700;
 }
 
+/* Highlight super - Pour "expériences web" plus lisible */
+.highlight-super {
+    background: linear-gradient(135deg, var(--primary-blue), var(--tech-orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    font-size: 1.05em;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+    position: relative;
+    display: inline-block;
+    animation: highlightPulse 3s ease-in-out infinite;
+}
+
+.highlight-super::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -4px;
+    right: -4px;
+    bottom: -2px;
+    background: linear-gradient(135deg, 
+        rgba(37, 99, 235, 0.1) 0%, 
+        rgba(245, 158, 11, 0.1) 100%);
+    border-radius: 8px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.highlight-super:hover::before {
+    opacity: 1;
+}
+
+@keyframes highlightPulse {
+    0%, 100% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+    50% {
+        transform: scale(1.02);
+        filter: brightness(1.1);
+    }
+}
+
+/* Responsive pour highlight-super */
+@media (max-width: 768px) {
+    .highlight-super {
+        font-size: 1.08em;
+        font-weight: 900;
+        letter-spacing: 0.8px;
+        line-height: 1.2;
+        text-shadow: 0 3px 6px rgba(37, 99, 235, 0.3);
+    }
+    
+    .highlight-super::before {
+        border-radius: 6px;
+        top: -3px;
+        left: -6px;
+        right: -6px;
+        bottom: -3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .highlight-super {
+        font-size: 1.1em;
+        font-weight: 900;
+        letter-spacing: 1px;
+        text-shadow: 0 4px 8px rgba(37, 99, 235, 0.4);
+        background: linear-gradient(135deg, 
+            var(--primary-blue) 0%, 
+            var(--tech-orange) 50%, 
+            var(--primary-blue) 100%);
+        background-size: 200% 200%;
+        animation: highlightPulse 3s ease-in-out infinite, 
+                   gradientShift 4s ease-in-out infinite;
+    }
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
 /* Hero buttons */
 .hero-buttons {
     display: flex;
