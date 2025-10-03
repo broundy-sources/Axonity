@@ -2412,111 +2412,193 @@ a:focus, button:focus, input:focus, textarea:focus {
 
 
 
-/* Réactivité pour les écrans mobiles */
+/* Réactivité pour les écrans mobiles - Améliorée */
 @media (max-width: 768px) {
     /* Adaptations pour le container */
     .accueil-container {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 2rem;
         align-items: center;
+        padding: 1rem;
     }
     
     .accueil-texte {
         max-width: 100%;
-        padding-right: 0;
+        width: 100%;
+        padding: 0 1rem;
         text-align: center;
-        order: 1; /* Texte en premier sur mobile */
+        order: 1;
     }
     
+    /* Section visuelle adaptative pour mobile */
     .accueil-visuel {
+        width: 100% !important;
         max-width: 100%;
-        margin-top: 2rem;
-        min-height: 350px;
-        padding: 0.5rem;
-        order: 2; /* Visuel en second sur mobile */
+        height: auto !important;
+        min-height: 400px;
+        padding: 1.5rem;
+        order: 2;
+        border-radius: 16px;
+        margin: 0;
     }
     
+    /* Conteneur des éléments visuels mobile */
     .hero-visuals {
         flex-direction: column;
-        max-width: 90%;
-        gap: 1rem;
+        width: 100%;
+        max-width: 100%;
+        gap: 1.5rem;
         align-items: center;
-        padding: 0.5rem;
+        padding: 1rem;
+        height: auto;
+    }
+
+    /* Ordinateur central adapté mobile */
+    .central-device {
+        margin: 1rem auto;
+        transform: scale(0.8) perspective(1000px) rotateY(0deg) !important;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .central-device:hover {
+        transform: scale(0.85) perspective(1000px) rotateY(0deg) translateY(-5px) !important;
     }
 
     .device {
         position: relative;
-        transform: none;
         width: 100%;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
     }
 
     .device.laptop {
-        width: min(280px, 80vw);
-        height: min(175px, 50vw);
-        transform: none;
+        width: min(300px, 90vw);
+        height: min(190px, 56vw);
     }
     
-    .central-device {
-        margin: 2rem auto;
-        transform: scale(1.05); /* Légèrement réduit sur mobile */
+    /* Adaptation des éléments visuels pour mobile */
+    .visual-elements {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 200px;
     }
     
-    /* Adaptation des nouveaux éléments visuels pour mobile */
+    .visual-elements::before,
+    .visual-elements::after {
+        display: none; /* Masquer les éléments décoratifs sur mobile */
+    }
+    
+    /* Métrique responsive mobile */
     .key-metric {
-        padding: 1rem 1.2rem;
-        font-size: 0.85rem;
+        position: static !important;
+        margin: 1rem auto;
+        padding: 1rem 1.5rem;
+        font-size: 0.9rem;
+        max-width: 280px;
+        transform: none !important;
     }
     
     .responsive-metric {
-        top: 10%;
-        right: 5%;
+        top: auto !important;
+        right: auto !important;
+        position: static !important;
     }
     
+    /* Citation mobile */
     .professional-quote {
-        bottom: 10%;
-        left: 0%; /* Alignée au bord gauche sur mobile */
+        position: static !important;
+        bottom: auto !important;
+        left: auto !important;
+        margin: 1.5rem auto 0;
+        max-width: 100%;
     }
     
     .quote-content {
-        padding: 1rem 1.5rem;
-        font-size: 0.95rem;
+        padding: 1.2rem 1.8rem;
+        font-size: 1rem;
+        border-radius: 16px;
+        border-left: 4px solid var(--tech-orange);
+        text-align: center;
     }
     
-    .line {
-        height: 1px;
-        opacity: 0.4;
+    /* Lignes de connexion simplifiées */
+    .connection-lines {
+        display: none; /* Masquer sur mobile pour simplifier */
+    }
+    
+    /* Badge premium mobile */
+    .quality-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+        border-radius: 20px;
+    }
+}
+
+/* Réactivité pour les très petits écrans - Améliorée */
+@media (max-width: 480px) {
+    .accueil-container {
+        padding: 0.5rem;
+        gap: 1.5rem;
+    }
+    
+    .accueil-visuel {
+        padding: 1rem !important;
+        min-height: 350px !important;
+        border-radius: 12px;
+    }
+    
+    .hero-visuals {
+        padding: 0.5rem;
+        gap: 1rem;
+    }
+
+    /* Ordinateur encore plus compact */
+    .central-device {
+        transform: scale(0.7) perspective(1000px) rotateY(0deg) !important;
+        margin: 0.5rem auto;
+        max-width: 260px;
+    }
+    
+    .central-device:hover {
+        transform: scale(0.75) perspective(1000px) rotateY(0deg) translateY(-3px) !important;
+    }
+
+    .device.laptop {
+        width: min(260px, 95vw);
+        height: min(165px, 60vw);
+        border: 3px solid #333;
+    }
+    
+    /* Éléments visuels compacts */
+    .key-metric {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.8rem;
+        max-width: 250px;
+    }
+    
+    .quote-content {
+        padding: 1rem 1.3rem;
+        font-size: 0.9rem;
     }
     
     .quality-badge {
         padding: 0.4rem 0.8rem;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
+    }
+    
+    /* Textes adaptés */
+    .accueil-texte h1 {
+        font-size: 2rem;
+    }
+    
+    .accueil-texte p {
+        font-size: 0.9rem;
     }
 }
-
-/* Réactivité pour les très petits écrans */
-@media (max-width: 480px) {
-    .accueil-visuel {
-        padding: 0.25rem;
-        min-height: 280px;
-    }
-    
-    .hero-visuals {
-        max-width: 95%;
-        gap: 0.5rem;
-        padding: 0.25rem;
-    }
-
-    .device.laptop {
-        width: min(240px, 85vw);
-        height: min(150px, 53vw);
-        border: 4px solid #333;
-    }
-    
-    .central-device {
-        margin: 1.5rem auto;
-        transform: scale(1); /* Taille normale sur très petits écrans */
-    }
     
     /* Adaptation très petits écrans pour les nouveaux éléments */
     .key-metric {
@@ -2547,6 +2629,84 @@ a:focus, button:focus, input:focus, textarea:focus {
     .quality-badge {
         padding: 0.3rem 0.6rem;
         font-size: 0.7rem;
+    }
+}
+
+/* Optimisation pour mobile en mode paysage */
+@media (max-width: 768px) and (orientation: landscape) {
+    .accueil-visuel {
+        height: auto !important;
+        min-height: 300px !important;
+        padding: 1rem !important;
+    }
+    
+    .hero-visuals {
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    .central-device {
+        flex: 1;
+        max-width: 300px;
+        transform: scale(0.7) perspective(1000px) rotateY(0deg) !important;
+    }
+    
+    .visual-elements {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .key-metric, .professional-quote {
+        position: static !important;
+        margin: 0.5rem 0;
+    }
+}
+
+/* Media query pour tablettes et écrans moyens */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .accueil-visuel {
+        width: 400px !important;
+        height: 800px !important;
+        padding: 1rem;
+    }
+    
+    .central-device {
+        transform: scale(1) perspective(1000px) rotateY(-3deg);
+    }
+    
+    .key-metric {
+        padding: 1rem 1.3rem;
+        font-size: 0.9rem;
+    }
+    
+    .quote-content {
+        padding: 1.3rem 1.8rem;
+        font-size: 1rem;
+    }
+}
+
+/* Media query pour écrans larges */
+@media (min-width: 1200px) {
+    .accueil-visuel {
+        width: 500px !important;
+        height: 1200px !important;
+    }
+    
+    .central-device {
+        transform: scale(1.2) perspective(1000px) rotateY(-5deg);
+    }
+    
+    .key-metric {
+        padding: 1.8rem 2.2rem;
+        font-size: 1.1rem;
+    }
+    
+    .quote-content {
+        padding: 2.2rem 2.8rem;
+        font-size: 1.3rem;
     }
 }
 
