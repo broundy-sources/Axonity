@@ -1,13 +1,11 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://broundy-sources.github.io/Axonity/sitemap.xml
-
-# Règles spécifiques
+# Bloquer seulement l'administration si présente
 Disallow: /admin/
-Disallow: /*.css$
-Disallow: /*.js$
 
-# Crawler directives
-Crawl-delay: 1
+# Déclarer le sitemap sur le même domaine (important pour Google)
+Sitemap: https://axonity.fr/sitemap.xml
+
+# Note: Crawl-delay est ignoré par Google; laissé pour d'autres crawlers si nécessaire
+# Crawl-delay: 1
