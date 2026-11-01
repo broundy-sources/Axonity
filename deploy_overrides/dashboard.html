@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block title %}Appels — {{ garage.name }} — Axonity{% endblock %}
+{% block robots %}<meta name="robots" content="noindex, nofollow">{% endblock %}
+{% block body_class %}ax-body--app{% endblock %}
+
+{% block content %}
+<div class="ax-app ax-dashboard">
+    <section class="ax-dashboard-hero">
+        <div class="ax-dashboard-hero__copy">
+            <p class="ax-eyebrow ax-eyebrow--light">{{ garage.name }}</p>
+            <h1>Tableau de bord</h1>
+            <p>Vos appels sont résumés et classés pour que vous sachiez immédiatement qui rappeler et quoi traiter.</p>
+        </div>
+        <div class="ax-dashboard-hero__pulse">
+            <span class="ax-live-dot" aria-hidden="true"></span>
+            Standard IA actif
+        </div>
+    </section>
+
+    <section class="ax-overview" aria-label="Synthèse des appels">
+        <div class="ax-overview__card">
+            <span class="ax-overview__icon" aria-hidden="true">↗</span>
+            <div><strong>{{ today_count }}</strong><span>Appels aujourd'hui</span></div>
+        </div>
+        <div class="ax-overview__card {% if urgent_count %}ax-overview__card--danger{% endif %}">
+            <span class="ax-overview__icon" aria-hidden="true">!</span>
+            <div><strong>{{ urgent_count }}</strong><span>Urgence{{ 's' if urgent_count > 1 else '' }} à traiter</span></div>
+        </div>
+        <div class="ax-overview__card {% if pending_appointments %}ax-overview__card--warning{% endif %}">
+            <span class="ax-overview__icon" aria-hidden="true">⌚</span>
+            <div><strong>{{ pending_appointments }}</strong><span>RDV à traiter</span></div>
+        </div>
+        <div class="ax-overview__card">
+            <span class="ax-overview__icon" aria-hidden="true">#</span>
+            <div><strong>{{ total_count }}</strong><span>Appels enregistrés</span></div>
+        </div>
+    </section>
+
+    <section class="ax-call-feed">
+        <header class="ax-section-head">
+            <div>
+                <p class="ax-eyebrow">Boîte de réception</p>
+                <h2>Appels récents</h2>
+            </div>
+            <p class="ax-section-head__hint">Cliquez sur un appel pour ouvrir la fiche complète.</p>
+        </header>
+
+        {% if not calls %}
+            <p class="ax-empty">Aucun appel enregistré pour le moment. Les fiches apparaîtront ici dès le premier appel.</p>
+        {% else %}
+            <ul class="ax-calls">
+                {% for call in calls %}
+                    <li>
+                        <a class="ax-card ax-card--{{ call.priority }}" href="{{ url_for('dashboard.call_detail', call_id=call.id) }}">
+                            <div class="ax-card__rail" aria-hidden="true"></div>
+                            <div class="ax-card__body">
+                                <div class="ax-card__top">
+                                    <div class="ax-card__identity">
+                                        <span class="ax-card__avatar">{{ (call.customer_display[:1] or '?')|upper }}</span>
+                                        <div>
+                                            <h3 class="ax-card__name">{{ call.customer_display }}</h3>
+                                            <p class="ax-card__phone">{{ call.phone_display or 'Numéro inconnu' }}{% if call.vehicle %} · {{ call.vehicle }}{% endif %}</p>
+                                        </div>
+                                    </div>
+                                    <div class="ax-card__meta">
+                                        <span class="ax-card__date">{{ call.created_at.strftime('%d/%m/%Y à %H:%M') }}</span>
+                                        <span class="ax-badges">
+                                            {% if call.is_urgent %}<span class="ax-badge ax-badge--urgent">Urgent</span>
+                                            {% elif call.priority == 'attention' %}<span class="ax-badge ax-badge--attention">{{ call.priority_label }}</span>{% endif %}
+                                            {% if call.is_appointment_request %}<span class="ax-badge ax-badge--appt-{{ call.appointment_status }}">RDV {{ call.appointment_label|lower }}</span>{% endif %}
+                                            <span class="ax-badge ax-badge--status-{{ call.status }}">{{ call.status_label }}</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="ax-card__content">
+                                    <div>
+                                        <span class="ax-card__label">Motif</span>
+                                        <p class="ax-card__reason">{{ call.reason or 'Motif non précisé' }}</p>
+                                    </div>
+                                    <div>
+                                        <span class="ax-card__label">À faire</span>
+                                        {% if call.is_appointment_request %}
+                                            <p class="ax-card__action">
+                                                {% if call.appointment_pending %}Créneau demandé : {{ call.appointment_requested_display }} — à traiter
+                                                {% else %}{{ call.appointment_label }}{% if call.appointment_at %} : {{ call.appointment_slot_display }}{% endif %}{% endif %}
+                                            </p>
+                                        {% elif call.requested_action %}<p class="ax-card__action">{{ call.requested_action }}</p>
+                                        {% else %}<p class="ax-card__action">Consulter la fiche</p>{% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="ax-card__chevron" aria-hidden="true">›</span>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </section>
+</div>
+{% endblock %}
