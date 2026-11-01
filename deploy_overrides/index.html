@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="ax-hero ax-hero--split">
+    <div class="ax-hero__text">
+        <div class="ax-hero__pill"><span></span> Standard téléphonique IA pour garages</div>
+        <h1>Vos appels pris en charge, même quand vous avez les mains sous un capot.</h1>
+        <p class="ax-lead">Axonity répond au nom de votre garage, comprend la demande du client et transforme chaque appel manqué en fiche claire, prête à traiter.</p>
+        <div class="ax-hero__actions">
+            <a class="ax-btn ax-btn--primary ax-btn--lg" href="{{ url_for('auth.login') }}">Accéder à mes appels</a>
+            <a class="ax-btn ax-btn--ghost ax-btn--lg" href="#fonctionnement">Découvrir le fonctionnement</a>
+        </div>
+        <div class="ax-hero__trust">
+            <span>✓ Voix naturelle</span><span>✓ Compte rendu structuré</span><span>✓ Pensé pour les ateliers</span>
+        </div>
+    </div>
+
+    <div class="ax-product-preview" aria-label="Aperçu du tableau de bord Axonity">
+        <div class="ax-product-preview__bar">
+            <div><span></span><span></span><span></span></div><strong>Axonity</strong><small>Standard actif</small>
+        </div>
+        <div class="ax-product-preview__stats">
+            <div><strong>6</strong><span>Aujourd'hui</span></div>
+            <div><strong>1</strong><span>Urgence</span></div>
+            <div><strong>2</strong><span>RDV</span></div>
+        </div>
+        <div class="ax-product-preview__call ax-product-preview__call--urgent">
+            <div class="ax-product-preview__calltop"><strong>Élodie MEHALA</strong><span>URGENT</span></div>
+            <p>Renault Scénic · 06 12 34 56 78</p><b>Moteur qui fume depuis deux semaines</b><small>Rappel demandé : demain matin</small>
+        </div>
+        <div class="ax-product-preview__call">
+            <div class="ax-product-preview__calltop"><strong>Marc Dupont</strong><span>NOUVEAU</span></div>
+            <p>Peugeot 208 · 07 18 42 35 66</p><b>Demande de rendez-vous pour révision</b><small>Créneau souhaité : mardi à 14h</small>
+        </div>
+    </div>
+</section>
+
+<section class="ax-reassurance">
+    <strong>Un appel manqué ne devrait pas devenir un client perdu.</strong>
+    <span>Axonity prend le relais pendant que votre équipe reste concentrée sur l'atelier.</span>
+</section>
+
+<section class="ax-steps" id="fonctionnement">
+    <div class="ax-section-title"><p class="ax-eyebrow">Simple par conception</p><h2>De la sonnerie à une action claire en 4 étapes</h2></div>
+    <ol class="ax-steps__list">
+        <li><span class="ax-steps__num">01</span><h3>Le client appelle</h3><p>Sur votre numéro habituel, y compris quand personne ne peut décrocher.</p></li>
+        <li><span class="ax-steps__num">02</span><h3>Axonity répond</h3><p>Au nom de votre garage, avec une voix naturelle et un échange guidé.</p></li>
+        <li><span class="ax-steps__num">03</span><h3>La demande est qualifiée</h3><p>Nom, téléphone, véhicule, motif et besoin concret sont recueillis et structurés.</p></li>
+        <li><span class="ax-steps__num">04</span><h3>Vous décidez</h3><p>La fiche arrive dans votre espace. Vous rappelez ou traitez le rendez-vous quand vous êtes disponible.</p></li>
+    </ol>
+</section>
+
+<section class="ax-benefits">
+    <div class="ax-section-title"><p class="ax-eyebrow">Pensé atelier</p><h2>Moins d'interruptions. Plus de demandes récupérées.</h2></div>
+    <div class="ax-benefits__grid">
+        <article><span class="ax-benefit-icon">01</span><h3>Plus d'appel perdu</h3><p>Chaque appel utile devient une fiche exploitable au lieu d'une sonnerie sans réponse.</p></article>
+        <article><span class="ax-benefit-icon">02</span><h3>Pas d'interruption au travail</h3><p>L'équipe termine ce qu'elle fait et rappelle avec toutes les informations déjà disponibles.</p></article>
+        <article><span class="ax-benefit-icon">03</span><h3>Des demandes propres</h3><p>Le motif, le véhicule, le numéro et l'action attendue sont regroupés au même endroit.</p></article>
+        <article><span class="ax-benefit-icon">04</span><h3>Les priorités visibles</h3><p>Urgences et demandes de rendez-vous ressortent immédiatement dans le tableau de bord.</p></article>
+    </div>
+</section>
+
+<section class="ax-demo">
+    <div class="ax-demo__copy">
+        <p class="ax-eyebrow">Une fiche, pas un pavé</p><h2>Vous comprenez l'appel en quelques secondes</h2>
+        <p>Le dashboard met devant vous les informations qui servent réellement à décider quoi faire ensuite.</p>
+    </div>
+    <div class="ax-card ax-card--urgent ax-card--static">
+        <div class="ax-card__top"><span class="ax-badge ax-badge--urgent">Urgent</span><span class="ax-card__date">Aujourd'hui · 14:32</span></div>
+        <h3>Élodie MEHALA</h3><p class="ax-card__phone">06 12 34 56 78 · Renault Scénic</p>
+        <p class="ax-card__reason">Moteur qui fume depuis deux semaines</p><p class="ax-card__action">Rappel demandé : demain matin</p>
+    </div>
+</section>
+
+<section class="ax-cta ax-cta--dark">
+    <div><p class="ax-eyebrow ax-eyebrow--light">Bêta Axonity</p><h2>Testez le standard sur une vraie ligne.</h2><p>Axonity est en phase de test auprès de premiers garages. Échangeons sur votre fonctionnement et vos appels manqués.</p></div>
+    <a class="ax-btn ax-btn--light ax-btn--lg" href="mailto:{{ config['GARAGE_CONTACT_EMAIL'] }}">Nous écrire</a>
+</section>
+{% endblock %}
